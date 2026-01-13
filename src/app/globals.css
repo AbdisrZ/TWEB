@@ -1,19 +1,27 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --color-primary: #004aad; /* Professional Blue */
+  --color-primary-dark: #00337a;
+  --color-secondary: #f05a28; /* Energetic Orange */
+  --color-secondary-dark: #cc451a;
+  --color-neutral: #1a1a1a;
 }
 
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+/* Optional: Support dark mode if needed later, but prioritizing brand colors */
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Keeping background light-ish or neutral for corporate feel even in dark mode 
+       or full dark mode. Let's stick to standard dark mode mapping for now 
+       but typically medical sites are bright. */
     --background: #0a0a0a;
     --foreground: #ededed;
   }
@@ -22,5 +30,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
